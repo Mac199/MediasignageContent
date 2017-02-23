@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Schedule name="Test_Image">
+  <programs>
+    <program layout="sample1" name="Test_Image">
+      <playlist name="main">
+        <still file="earth-clip-art-barretr_Earth.png" timeout="45" id="2679"/>
+        <still file="Earth-600x600.jpg" timeout="45" id="2677"/>
+        <still file="earth.jpg" timeout="45" id="2676"/>
+        <still file="ccfid_113386_2016277154705_image.jpg" timeout="45" id="2675"/>
+        <still file="abi_full_disk_low_res_jan_15_2017.jpg" timeout="45" id="2674"/>
+        <still file="3d-Earth-Globe.png" timeout="45" id="2672"/>
+        <still file="31946589405_deb63e02d6_o.jpg" timeout="45" id="2673"/>
+        <still file="Earth2014shape_SouthAmerica_small.jpg" timeout="45" id="2678"/>
+        <still file="international-earth-day_1057-577.jpg" timeout="45" id="2680"/>
+        <still file="IORview.jpg" timeout="45" id="2681"/>
+        <still file="masonfc_s_10_24_13_20131023172054_sgtanthonyflyercopypdf_11_5_13.png" timeout="45" id="2699"/>
+        <still file="maxresdefault.jpg" timeout="45" id="2683"/>
+        <still file="orbital_atk_stargazer_arrives.jpg" timeout="45" id="2684"/>
+        <still file="masonall_s_10_21_13_20131021142118_veteransweekend2013flyer_11_11_13.png" timeout="45" id="2695"/>
+      </playlist>
+      <datafeed component="text-rss-2line-4-title.swf" name="rss">
+        <feed destination="rss.xml" filename="NOAA.xml"/>
+      </datafeed>
+      <datafeed component="weather-noaa-tall2.swf" name="weather">
+        <feed destination="weather.xml" filename="NOAA.xml"/>
+      </datafeed>
+    </program>
+  </programs>
+  <special>
+    <default program="Test_Image"/>
+  </special>
+  <timers>
+  </timers>
+</Schedule>

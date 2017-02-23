@@ -1,0 +1,7 @@
+{
+	"version": "9",
+	"schedule": "play.xml",
+	"program": "Test_Image",
+	"layout": "layouts/sample1.ini",
+	"layoutDir": "layouts"
+}
