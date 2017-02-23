@@ -46,7 +46,7 @@
 //var debugSimulateCgi = "playerParameters.json";
 
 // To enable debug div uncomment next line
-// var debugEnableDiv = true;
+//var debugEnableDiv = true;
 
 // The debug function can be used to display debug information during development.
 var debug = function(str)
@@ -954,9 +954,10 @@ Still.prototype.start = function()
 	var img = document.createElement('img');
 	img.src = this.file + "?_=" + now.getTime();
 	img.style.position = 'relative';
-	img.style.width = '100%';
+	img.style.width = 'auto';
 	img.style.height = '100%';
 	img.style.display = 'block';
+	img.style.margin = '0 auto';
 	this.playList.currentContainer.div.appendChild(img);
 
 	this.imgElement = img;
