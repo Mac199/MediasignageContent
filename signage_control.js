@@ -953,13 +953,16 @@ Still.prototype.start = function()
 	this.playList.playing(this.file);
 	var img = document.createElement('img');
 	img.src = this.file + "?_=" + now.getTime();
+	console.log(document.getElementsByTagName("IMG"));
 	img.style.position = 'relative';
 	img.style.width = 'auto';
 	img.style.height = '100%';
 	img.style.display = 'block';
 	img.style.margin = '0 auto';
 	this.playList.currentContainer.div.appendChild(img);
-
+    console.log(document.getElementById("qunimade").clientWidth);
+	console.log(document.getElementById("qunimade").clientHeight);
+	
 	this.imgElement = img;
 	this.playList.currentContainer.imgElement = img;
 	this.imgElement.addEventListener('error', this.callError, false);
@@ -2746,6 +2749,3 @@ function StartMediaSignage()
 		signageProgramObject = new Program();
 	}
 }
-
-
-
