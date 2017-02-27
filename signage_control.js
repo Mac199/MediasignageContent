@@ -949,23 +949,41 @@ Still.prototype.start = function()
 {
 	debug("Still start: file=" + this.file + " id=" + this.id);
 	var now = new Date();
-
+   
 	this.playList.playing(this.file);
 	var img = document.createElement('img');
-	img.src = this.file + "?_=" + now.getTime();
-	console.log(document.getElementsByTagName("IMG"));
-	img.style.position = 'relative';
-	img.style.width = 'auto';
-	img.style.height = '100%';
-	img.style.display = 'block';
-	img.style.margin = '0 auto';
-	this.playList.currentContainer.div.appendChild(img);
-    console.log(document.getElementById("qunimade").clientWidth);
-	console.log(document.getElementById("qunimade").clientHeight);
 	
+	img.src = this.file + "?_=" + now.getTime();
+	
+	img.onload = function(){
+		var p = this.parentNode;
+		var containerWidth = p.clientWidth;
+		var containerHeigth = p.clientHeight;
+		var naturalWidth = img.naturalWidth;
+		var naturalHeight = img.naturalHeight;	
+		console.log(naturalWidth+" "+containerWidth+" "+naturalHeight+" "+containerHeigth);	
+		img.style.position = 'relative';
+		img.style.display = 'block';
+		if (containerWidth/containerHeigth > naturalWidth/naturalHeight) {
+			img.style.width = 'auto';
+			img.style.height = '100%';
+			img.style.margin = '0 auto';
+			}
+		else {
+			img.style.width = '100%';
+			img.style.height = 'auto';
+			if(containerHeigth > img.height) {
+				distance = (containerHeigth - img.height)/2;
+				img.style.top = distance+"px";	
+				 }
+			};
+		};
+		
+	this.playList.currentContainer.div.appendChild(img);
 	this.imgElement = img;
 	this.playList.currentContainer.imgElement = img;
 	this.imgElement.addEventListener('error', this.callError, false);
+	
 	this.startTimeout();
 };
 
